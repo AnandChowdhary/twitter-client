@@ -12,6 +12,7 @@
     "typescript": "^3.4.5"
   },
   "dependencies": {
+    "dotenv": "^8.0.0",
     "sentiment": "^5.0.1",
     "twitter-stream-api": "^0.5.2"
   }
