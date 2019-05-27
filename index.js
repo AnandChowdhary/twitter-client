@@ -22,7 +22,7 @@ const keys = {
 };
 const Twitter = new TwitterStream(keys, false);
 Twitter.stream("statuses/filter", {
-  track: "taylor swift"
+  track: ["#UCL", "#TOTLIV", "#LIVTOT", "#ChampionsLeague", "#UCLfinal", "#UCLfinal2019", "#Spurs", "#Tottenham", "#THFC", "#COYS", "#Liverpool", "#LFC", "#YNWA", "@SpursOfficial", "@LFC"]
 });
 Twitter.on("data", obj => {
   obj = JSON.parse(obj.toString());
