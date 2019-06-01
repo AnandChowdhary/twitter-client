@@ -6,7 +6,8 @@
   "author": "Anand Chowdhary <mail@anandchowdhary.com>",
   "license": "MIT",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "start": "touch data.json && node index.js"
   },
   "devDependencies": {
     "typescript": "^3.4.5"
