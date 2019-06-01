@@ -31,17 +31,17 @@ Twitter.on("data", obj => {
     text: obj.text,
     source: obj.source,
     in_reply_to_screen_name: obj.in_reply_to_screen_name,
-    name: obj.user.name,
-    screen_name: obj.user.screen_name,
-    location: obj.user.location,
-    followers_count: obj.user.followers_count,
-    favourites_count: obj.user.favourites_count,
-    friends_count: obj.user.friends_count,
-    time_zone: obj.user.time_zone,
-    statuses_count: obj.user.statuses_count,
-    profile_image_url: obj.user.profile_image_url,
-    profile_link_color: obj.user.profile_link_color,
-    default_profile_image: obj.user.default_profile_image,
+    name: obj.user && obj.user.name,
+    screen_name: obj.user && obj.user.screen_name,
+    location: obj.user && obj.user.location,
+    followers_count: obj.user && obj.user.followers_count,
+    favourites_count: obj.user && obj.user.favourites_count,
+    friends_count: obj.user && obj.user.friends_count,
+    time_zone: obj.user && obj.user.time_zone,
+    statuses_count: obj.user && obj.user.statuses_count,
+    profile_image_url: obj.user && obj.user.profile_image_url,
+    profile_link_color: obj.user && obj.user.profile_link_color,
+    default_profile_image: obj.user && obj.user.default_profile_image,
     geo: JSON.stringify(obj.geo),
     coordinates: JSON.stringify(obj.coordinates),
     place: JSON.stringify(obj.place),
@@ -52,7 +52,7 @@ Twitter.on("data", obj => {
     lang: obj.lang,
     date: new Date(obj.created_at)
   };
-  obj.entities.hashtags.forEach(hashtag => {
+  obj.entities && obj.entities.hashtags.forEach(hashtag => {
     object[`hashtag_${hashtag.text}`] = true;
   });
   object.sentiment = getSentiment(obj.text);
