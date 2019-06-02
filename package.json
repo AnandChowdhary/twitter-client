@@ -7,9 +7,11 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc",
-    "start": "touch data.json && node index.js"
+    "start": "touch data.json && node index.js",
+    "data": "json2csv -i data.json -f source,in_reply_to_screen_name,screen_name,followers_count,favourites_count,friends_count,time_zone,statuses_count,quote_count,reply_count,retweet_count,favorite_count,lang,date,sentiment,sentiment_raw -o data.csv"
   },
   "devDependencies": {
+    "json2csv": "^4.5.1",
     "typescript": "^3.4.5"
   },
   "dependencies": {
